@@ -3,22 +3,22 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, PGPASSWORD, DB_HOST,DB
+  DB_USER,DB_PASSWORD, DB_HOST,DB
 } = process.env;
 
 
 
 
-// const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/countries`, {
-//   // logging:true, // set to console.log to see the raw SQL queries
-//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-// });
-
-
-const sequelize = new Sequelize(DB, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/countries`, {
   // logging:true, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
+
+
+// const sequelize = new Sequelize(DB, {
+//   // logging:true, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// });
 
 
 const basename = path.basename(__filename);

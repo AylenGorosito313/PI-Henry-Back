@@ -13,12 +13,16 @@ const {
 //   // logging:true, // set to console.log to see the raw SQL queries
 //   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 // });
-
-
-const sequelize = new Sequelize(DB, {
+const sequelize = new Sequelize(`postgres://countries_n8fy_user:S3mG9AnnFruXNujXjNGJbuxK2dtSZ5dp@dpg-cel41v82i3molpgmbpng-a/countries_n8fy`, {
   // logging:true, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
+
+
+// const sequelize = new Sequelize(DB, {
+//   // logging:true, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// });
 
 
 const basename = path.basename(__filename);
